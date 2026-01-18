@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { FlashCard } from "./FlashCard";
+import { TypingCard, PracticeDirection } from "./TypingCard";
 import { VocabWord, getVocabularyByLevel } from "@/data/vocabulary";
 import { 
   loadProgress, 
@@ -7,18 +8,24 @@ import {
   updateCardProgress, 
   getCardsForReview,
   getNewCards,
-  createNewCardProgress,
   CardProgress 
 } from "@/lib/srs";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Trophy, Target, Zap } from "lucide-react";
+import { ArrowLeft, Trophy, Target, Zap, RefreshCw } from "lucide-react";
+import { PracticeMode } from "./PracticeModeSelector";
 
 interface PracticeSessionProps {
   selectedLevels: (1 | 2 | 3)[];
+  practiceMode: PracticeMode;
   onBack: () => void;
 }
 
-export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps) {
+interface SessionCard {
+  word: VocabWord;
+  direction: PracticeDirection;
+}
+
+export function PracticeSession({ selectedLevels, practiceMode, onBack }: PracticeSessionProps) {
   const [progress, setProgress] = useState<CardProgress[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
@@ -42,10 +49,25 @@ export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps
     // Shuffle the session
     const shuffled = sessionWordIds.sort(() => Math.random() - 0.5);
     
-    return shuffled
+    const words = shuffled
       .map(id => vocabulary.find(w => w.id === id))
       .filter((w): w is VocabWord => w !== undefined);
-  }, [vocabulary, progress]);
+
+    // For typing mode, create cards with alternating directions
+    if (practiceMode === "typing") {
+      const typingCards: SessionCard[] = [];
+      words.forEach((word, index) => {
+        // Alternate between Chinese→English and English→Chinese
+        const direction: PracticeDirection = index % 2 === 0 
+          ? "chinese-to-english" 
+          : "english-to-chinese";
+        typingCards.push({ word, direction });
+      });
+      return typingCards;
+    }
+
+    return words.map(word => ({ word, direction: "chinese-to-english" as PracticeDirection }));
+  }, [vocabulary, progress, practiceMode]);
 
   // Load progress on mount
   useEffect(() => {
@@ -53,10 +75,11 @@ export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps
     setProgress(loaded);
   }, []);
 
-  const currentWord = sessionCards[currentIndex];
+  const currentCard = sessionCards[currentIndex];
 
-  const handleReview = (quality: number) => {
-    if (!currentWord) return;
+  // Handle flashcard review (quality-based)
+  const handleFlashcardReview = (quality: number) => {
+    if (!currentCard) return;
 
     // Update stats
     if (quality >= 3) {
@@ -66,7 +89,32 @@ export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps
     }
 
     // Update SRS progress
-    const newProgress = updateCardProgress(progress, currentWord.id, quality);
+    const newProgress = updateCardProgress(progress, currentCard.word.id, quality);
+    setProgress(newProgress);
+    saveProgress(newProgress);
+
+    // Move to next card or complete
+    if (currentIndex < sessionCards.length - 1) {
+      setCurrentIndex(i => i + 1);
+    } else {
+      setIsComplete(true);
+    }
+  };
+
+  // Handle typing result (correct/incorrect)
+  const handleTypingResult = (isCorrect: boolean) => {
+    if (!currentCard) return;
+
+    // Update stats
+    if (isCorrect) {
+      setSessionStats(s => ({ ...s, correct: s.correct + 1 }));
+    } else {
+      setSessionStats(s => ({ ...s, incorrect: s.incorrect + 1 }));
+    }
+
+    // Update SRS progress (map boolean to quality score)
+    const quality = isCorrect ? 4 : 2; // 4 = good, 2 = hard (need to review soon)
+    const newProgress = updateCardProgress(progress, currentCard.word.id, quality);
     setProgress(newProgress);
     saveProgress(newProgress);
 
@@ -142,7 +190,7 @@ export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps
 
         <div className="flex flex-col gap-3">
           <Button variant="hero" size="lg" onClick={restartSession}>
-            <Zap className="w-4 h-4 mr-2" />
+            <RefreshCw className="w-4 h-4 mr-2" />
             Practice More
           </Button>
           <Button variant="outline" size="lg" onClick={onBack}>
@@ -183,14 +231,25 @@ export function PracticeSession({ selectedLevels, onBack }: PracticeSessionProps
       </div>
 
       {/* Card */}
-      {currentWord && (
-        <FlashCard
-          key={currentWord.id}
-          word={currentWord}
-          onReview={handleReview}
-          cardNumber={currentIndex + 1}
-          totalCards={sessionCards.length}
-        />
+      {currentCard && (
+        practiceMode === "flashcard" ? (
+          <FlashCard
+            key={currentCard.word.id}
+            word={currentCard.word}
+            onReview={handleFlashcardReview}
+            cardNumber={currentIndex + 1}
+            totalCards={sessionCards.length}
+          />
+        ) : (
+          <TypingCard
+            key={`${currentCard.word.id}-${currentCard.direction}`}
+            word={currentCard.word}
+            direction={currentCard.direction || "chinese-to-english"}
+            onResult={handleTypingResult}
+            cardNumber={currentIndex + 1}
+            totalCards={sessionCards.length}
+          />
+        )
       )}
     </div>
   );
