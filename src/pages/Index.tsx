@@ -1,20 +1,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { HSKLevelSelector } from "@/components/HSKLevelSelector";
+import { PracticeModeSelector, PracticeMode } from "@/components/PracticeModeSelector";
 import { PracticeSession } from "@/components/PracticeSession";
 import { StatsOverview } from "@/components/StatsOverview";
 import { BookOpen, Sparkles } from "lucide-react";
 
-type View = "home" | "select-level" | "practice";
+type View = "home" | "select-level" | "select-mode" | "practice";
 
 const Index = () => {
   const [view, setView] = useState<View>("home");
   const [selectedLevels, setSelectedLevels] = useState<(1 | 2 | 3)[]>([1]);
+  const [practiceMode, setPracticeMode] = useState<PracticeMode>("flashcard");
+
+  const handleLevelSelected = () => {
+    if (selectedLevels.length > 0) {
+      setView("select-mode");
+    }
+  };
 
   const handleStartPractice = () => {
-    if (selectedLevels.length > 0) {
-      setView("practice");
-    }
+    setView("practice");
   };
 
   if (view === "practice") {
@@ -23,7 +29,23 @@ const Index = () => {
         <div className="max-w-lg mx-auto">
           <PracticeSession
             selectedLevels={selectedLevels}
+            practiceMode={practiceMode}
             onBack={() => setView("home")}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (view === "select-mode") {
+    return (
+      <div className="min-h-screen bg-background px-4 py-8">
+        <div className="max-w-2xl mx-auto">
+          <PracticeModeSelector
+            selectedMode={practiceMode}
+            onModeChange={setPracticeMode}
+            onContinue={handleStartPractice}
+            onBack={() => setView("select-level")}
           />
         </div>
       </div>
@@ -43,7 +65,7 @@ const Index = () => {
           <HSKLevelSelector
             selectedLevels={selectedLevels}
             onLevelsChange={setSelectedLevels}
-            onStartPractice={handleStartPractice}
+            onStartPractice={handleLevelSelected}
           />
         </div>
       </div>
@@ -117,9 +139,9 @@ const Index = () => {
                 desc: "SM-2 algorithm optimizes review timing for long-term retention"
               },
               {
-                icon: "🎯",
+                icon: "⌨️",
                 title: "Active Recall",
-                desc: "Test yourself first, then reveal answers for deeper learning"
+                desc: "Type translations for deeper learning with bidirectional practice"
               },
               {
                 icon: "📊",
