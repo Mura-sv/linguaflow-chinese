@@ -167,6 +167,191 @@ export const hsk3Vocabulary: VocabWord[] = [
   { id: "hsk3_048", hanzi: "不但", pinyin: "búdàn", english: "not only", hskLevel: 3, category: "conjunctions" },
   { id: "hsk3_049", hanzi: "只要", pinyin: "zhǐyào", english: "as long as", hskLevel: 3, category: "conjunctions" },
   { id: "hsk3_050", hanzi: "无论", pinyin: "wúlùn", english: "no matter", hskLevel: 3, category: "conjunctions" },
+   // Adverbs
+  { id: "hsk3_051", hanzi: "总是", pinyin: "zǒngshì", english: "always", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_052", hanzi: "终于", pinyin: "zhōngyú", english: "finally", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_053", hanzi: "其实", pinyin: "qíshí", english: "actually, in fact", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_054", hanzi: "一定", pinyin: "yídìng", english: "definitely, certainly", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_055", hanzi: "一共", pinyin: "yígòng", english: "altogether", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_056", hanzi: "几乎", pinyin: "jīhū", english: "almost", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_057", hanzi: "经常", pinyin: "jīngcháng", english: "often", hskLevel: 3, category: "adverbs" },
+
+  // Nouns (Daily Life & Abstract)
+  { id: "hsk3_058", hanzi: "世界", pinyin: "shìjiè", english: "world", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_059", hanzi: "习惯", pinyin: "xíguàn", english: "habit", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_060", hanzi: "水平", pinyin: "shuǐpíng", english: "level, standard", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_061", hanzi: "兴趣", pinyin: "xìngqù", english: "interest", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_062", hanzi: "办法", pinyin: "bànfǎ", english: "method, way", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_063", hanzi: "邻居", pinyin: "línjū", english: "neighbor", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_064", hanzi: "客人", pinyin: "kèrén", english: "guest", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_065", hanzi: "比赛", pinyin: "bǐsài", english: "match, competition", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_066", hanzi: "成绩", pinyin: "chéngjì", english: "grade, score, achievement", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_067", hanzi: "新闻", pinyin: "xīnwén", english: "news", hskLevel: 3, category: "nouns" },
+
+  // Verbs (Actions & Cognitive)
+  { id: "hsk3_068", hanzi: "明白", pinyin: "míngbai", english: "to understand", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_069", hanzi: "认为", pinyin: "rènwéi", english: "to think, to consider", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_070", hanzi: "离开", pinyin: "líkāi", english: "to leave, to depart", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_071", hanzi: "遇到", pinyin: "yùdào", english: "to meet, to encounter", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_072", hanzi: "检查", pinyin: "jiǎnchá", english: "to check, to examine", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_073", hanzi: "发现", pinyin: "fāxiàn", english: "to discover, to find out", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_074", hanzi: "记得", pinyin: "jìde", english: "to remember", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_075", hanzi: "忘记", pinyin: "wàngjì", english: "to forget", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_076", hanzi: "锻炼", pinyin: "duànliàn", english: "to exercise", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_077", hanzi: "打算", pinyin: "dǎsuàn", english: "to plan", hskLevel: 3, category: "verbs" },
+
+  // Adjectives (Descriptive)
+  { id: "hsk3_078", hanzi: "方便", pinyin: "fāngbiàn", english: "convenient", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_079", hanzi: "热情", pinyin: "rèqíng", english: "enthusiastic", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_080", hanzi: "有名", pinyin: "yǒumíng", english: "famous", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_081", hanzi: "奇怪", pinyin: "qíguài", english: "strange, odd", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_082", hanzi: "满意", pinyin: "mǎnyì", english: "satisfied", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_083", hanzi: "难过", pinyin: "nánguò", english: "sad, aggrieved", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_084", hanzi: "认真", pinyin: "rènzhēn", english: "serious, conscientious", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_085", hanzi: "干净", pinyin: "gānjìng", english: "clean", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_086", hanzi: "聪明", pinyin: "cōngming", english: "smart, clever", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_087", hanzi: "努力", pinyin: "nǔlì", english: "hardworking", hskLevel: 3, category: "adjectives" },
+
+  // Time & Location Words
+  { id: "hsk3_088", hanzi: "刚才", pinyin: "gāngcái", english: "just now", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_089", hanzi: "过去", pinyin: "guòqù", english: "past", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_090", hanzi: "附近", pinyin: "fùjìn", english: "nearby, vicinity", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_091", hanzi: "中间", pinyin: "zhōngjiān", english: "middle, between", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_092", hanzi: "周末", pinyin: "zhōumò", english: "weekend", hskLevel: 3, category: "nouns" },
+
+  // Common Objects/Places
+  { id: "hsk3_093", hanzi: "地铁", pinyin: "dìtiě", english: "subway", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_094", hanzi: "电梯", pinyin: "diàntī", english: "elevator", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_095", hanzi: "图书馆", pinyin: "túshūguǎn", english: "library", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_096", hanzi: "照片", pinyin: "zhàopiàn", english: "photo", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_097", hanzi: "地图", pinyin: "dìtú", english: "map", hskLevel: 3, category: "nouns" },
+
+  // Measure Words & Prepositions
+  { id: "hsk3_098", hanzi: "双", pinyin: "shuāng", english: "pair (measure word)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_099", hanzi: "张", pinyin: "zhāng", english: "sheet (measure word for flat objects)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_100", hanzi: "为了", pinyin: "wèile", english: "in order to, for", hskLevel: 3, category: "prepositions" },
+  
+  // Common Verbs (Daily Activities)
+  { id: "hsk3_101", hanzi: "搬", pinyin: "bān", english: "to move (items, house)", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_102", hanzi: "打扫", pinyin: "dǎsǎo", english: "to clean, to sweep", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_103", hanzi: "复习", pinyin: "fùxí", english: "to review", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_104", hanzi: "洗澡", pinyin: "xǐzǎo", english: "to take a shower/bath", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_105", hanzi: "刷牙", pinyin: "shuāyá", english: "to brush teeth", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_106", hanzi: "发烧", pinyin: "fāshāo", english: "to have a fever", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_107", hanzi: "迟到", pinyin: "chídào", english: "to be late", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_108", hanzi: "哭", pinyin: "kū", english: "to cry", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_109", hanzi: "笑", pinyin: "xiào", english: "to laugh, smile", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_110", hanzi: "聊天", pinyin: "liáotiān", english: "to chat", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_111", hanzi: "照相", pinyin: "zhàoxiàng", english: "to take a photo", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_112", hanzi: "结婚", pinyin: "jiéhūn", english: "to marry", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_113", hanzi: "帮忙", pinyin: "bāngmáng", english: "to help", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_114", hanzi: "借", pinyin: "jiè", english: "to borrow, to lend", hskLevel: 3, category: "verbs" },
+  { id: "hsk3_115", hanzi: "还", pinyin: "huán", english: "to return (something)", hskLevel: 3, category: "verbs" },
+
+  // Nouns (Food & Drink)
+  { id: "hsk3_116", hanzi: "菜单", pinyin: "càidān", english: "menu", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_117", hanzi: "饮料", pinyin: "yǐnliào", english: "beverage, drink", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_118", hanzi: "果汁", pinyin: "guǒzhī", english: "fruit juice", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_119", hanzi: "啤酒", pinyin: "píjiǔ", english: "beer", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_120", hanzi: "面包", pinyin: "miànbāo", english: "bread", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_121", hanzi: "蛋糕", pinyin: "dàngāo", english: "cake", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_122", hanzi: "米饭", pinyin: "mǐfàn", english: "cooked rice", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_123", hanzi: "糖", pinyin: "táng", english: "sugar, candy", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_124", hanzi: "香蕉", pinyin: "xiāngjiāo", english: "banana", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_125", hanzi: "西瓜", pinyin: "xīguā", english: "watermelon", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_126", hanzi: "葡萄", pinyin: "pútao", english: "grape", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_127", hanzi: "筷子", pinyin: "kuàizi", english: "chopsticks", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_128", hanzi: "盘子", pinyin: "pánzi", english: "plate", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_129", hanzi: "碗", pinyin: "wǎn", english: "bowl", hskLevel: 3, category: "nouns" },
+
+  // Adjectives (Feelings & States)
+  { id: "hsk3_130", hanzi: "饿", pinyin: "è", english: "hungry", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_131", hanzi: "渴", pinyin: "kě", english: "thirsty", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_132", hanzi: "饱", pinyin: "bǎo", english: "full (from eating)", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_133", hanzi: "累", pinyin: "lèi", english: "tired", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_134", hanzi: "疼", pinyin: "téng", english: "painful", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_135", hanzi: "忙", pinyin: "máng", english: "busy", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_136", hanzi: "奇怪", pinyin: "qíguài", english: "strange", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_137", hanzi: "可爱", pinyin: "kě'ài", english: "cute", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_138", hanzi: "生气", pinyin: "shēngqì", english: "angry", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_139", hanzi: "着急", pinyin: "zháojí", english: "anxious, worried", hskLevel: 3, category: "adjectives" },
+
+  // Nouns (Nature & Seasons)
+  { id: "hsk3_140", hanzi: "春", pinyin: "chūn", english: "spring", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_141", hanzi: "夏", pinyin: "xià", english: "summer", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_142", hanzi: "秋", pinyin: "qiū", english: "autumn", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_143", hanzi: "冬", pinyin: "dōng", english: "winter", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_144", hanzi: "月亮", pinyin: "yuèliang", english: "moon", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_145", hanzi: "太阳", pinyin: "tàiyáng", english: "sun", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_146", hanzi: "树", pinyin: "shù", english: "tree", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_147", hanzi: "河", pinyin: "hé", english: "river", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_148", hanzi: "草", pinyin: "cǎo", english: "grass", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_149", hanzi: "花", pinyin: "huā", english: "flower", hskLevel: 3, category: "nouns" },
+
+  // Nouns (Clothing & Body)
+  { id: "hsk3_150", hanzi: "衬衫", pinyin: "chènshān", english: "shirt", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_151", hanzi: "裤子", pinyin: "kùzi", english: "pants", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_152", hanzi: "裙子", pinyin: "qúnzi", english: "skirt, dress", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_153", hanzi: "鞋", pinyin: "xié", english: "shoe", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_154", hanzi: "帽子", pinyin: "màozi", english: "hat", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_155", hanzi: "脸", pinyin: "liǎn", english: "face", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_156", hanzi: "耳朵", pinyin: "ěrduo", english: "ear", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_157", hanzi: "鼻子", pinyin: "bízi", english: "nose", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_158", hanzi: "嘴", pinyin: "zuǐ", english: "mouth", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_159", hanzi: "头发", pinyin: "tóufa", english: "hair", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_160", hanzi: "脚", pinyin: "jiǎo", english: "foot", hskLevel: 3, category: "nouns" },
+
+  // Conjunctions & Adverbs
+  { id: "hsk3_161", hanzi: "或者", pinyin: "huòzhě", english: "or (in statements)", hskLevel: 3, category: "conjunctions" },
+  { id: "hsk3_162", hanzi: "还是", pinyin: "háishì", english: "or (in questions), still", hskLevel: 3, category: "conjunctions" },
+  { id: "hsk3_163", hanzi: "先", pinyin: "xiān", english: "first", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_164", hanzi: "然后", pinyin: "ránhòu", english: "then, afterwards", hskLevel: 3, category: "conjunctions" },
+  { id: "hsk3_165", hanzi: "一边", pinyin: "yìbiān", english: "simultaneously (while)", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_166", hanzi: "一直", pinyin: "yìzhí", english: "straight, continuously", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_167", hanzi: "极", pinyin: "jí", english: "extremely", hskLevel: 3, category: "adverbs" },
+  { id: "hsk3_168", hanzi: "越", pinyin: "yuè", english: "the more...", hskLevel: 3, category: "adverbs" },
+
+  // Nouns (Animals)
+  { id: "hsk3_169", hanzi: "动物", pinyin: "dòngwù", english: "animal", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_170", hanzi: "熊猫", pinyin: "xióngmāo", english: "panda", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_171", hanzi: "马", pinyin: "mǎ", english: "horse", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_172", hanzi: "鸟", pinyin: "niǎo", english: "bird", hskLevel: 3, category: "nouns" },
+
+  // Measure Words
+  { id: "hsk3_173", hanzi: "只", pinyin: "zhī", english: "measure word (animals, single items)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_174", hanzi: "条", pinyin: "tiáo", english: "measure word (long/thin objects)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_175", hanzi: "位", pinyin: "wèi", english: "measure word (polite for people)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_176", hanzi: "辆", pinyin: "liàng", english: "measure word (vehicles)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_177", hanzi: "把", pinyin: "bǎ", english: "measure word (objects with handles)", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_178", hanzi: "层", pinyin: "céng", english: "floor, layer", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_179", hanzi: "段", pinyin: "duàn", english: "segment, paragraph", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_180", hanzi: "种", pinyin: "zhǒng", english: "kind, type", hskLevel: 3, category: "measure_words" },
+  { id: "hsk3_181", hanzi: "刻", pinyin: "kè", english: "quarter (15 minutes)", hskLevel: 3, category: "measure_words" },
+
+  // Direction & Position
+  { id: "hsk3_182", hanzi: "东", pinyin: "dōng", english: "east", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_183", hanzi: "西", pinyin: "xī", english: "west", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_184", hanzi: "南", pinyin: "nán", english: "south", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_185", hanzi: "北", pinyin: "běi", english: "north", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_186", hanzi: "中间", pinyin: "zhōngjiān", english: "middle", hskLevel: 3, category: "nouns" },
+
+  // Adjectives (Colors)
+  { id: "hsk3_187", hanzi: "蓝", pinyin: "lán", english: "blue", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_188", hanzi: "绿", pinyin: "lǜ", english: "green", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_189", hanzi: "黄", pinyin: "huáng", english: "yellow", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_190", hanzi: "旧", pinyin: "jiù", english: "old (for objects)", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_191", hanzi: "老", pinyin: "lǎo", english: "old (for people)", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_192", hanzi: "年轻", pinyin: "niánqīng", english: "young", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_193", hanzi: "短", pinyin: "duǎn", english: "short (length)", hskLevel: 3, category: "adjectives" },
+  { id: "hsk3_194", hanzi: "低", pinyin: "dī", english: "low", hskLevel: 3, category: "adjectives" },
+
+  // Work & School Nouns
+  { id: "hsk3_195", hanzi: "会议", pinyin: "huìyì", english: "meeting", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_196", hanzi: "节目", pinyin: "jiémù", english: "program (TV, event)", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_197", hanzi: "年级", pinyin: "niánjí", english: "grade (school)", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_198", hanzi: "作业", pinyin: "zuòyè", english: "homework", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_199", hanzi: "词典", pinyin: "cídiǎn", english: "dictionary", hskLevel: 3, category: "nouns" },
+  { id: "hsk3_200", hanzi: "黑板", pinyin: "hēibǎn", english: "blackboard", hskLevel: 3, category: "nouns" },
 ];
 
 export const allVocabulary: VocabWord[] = [
