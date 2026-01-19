@@ -200,3 +200,52 @@ export function calculateStats(progress: CardProgress[]): StudyStats {
     streakDays: 0, // TODO: Implement streak tracking
   };
 }
+
+// --- Returnability helpers (used by PersonalizedWelcome / cliffhanger UI) ---
+
+/**
+ * Returns cards that the user was recently "close" on (near-misses).
+ * Pure helper: does not mutate progress.
+ */
+export function getNearMissCards(
+  progress: CardProgress[],
+  limit: number = 5
+): CardProgress[] {
+  return progress
+    .filter(p => (p.wasNearMiss ?? false) || (p.nearMissCount ?? 0) > 0)
+    .sort((a, b) => {
+      const aScore = (a.wasNearMiss ? 1000 : 0) + (a.nearMissCount ?? 0);
+      const bScore = (b.wasNearMiss ? 1000 : 0) + (b.nearMissCount ?? 0);
+      return bScore - aScore;
+    })
+    .slice(0, limit);
+}
+
+/**
+ * "Almost mastered" = learned (2+ reps) but still due soon/overdue, OR explicitly high masteryScore.
+ */
+export function getAlmostMasteredCards(
+  progress: CardProgress[],
+  limit: number = 5
+): CardProgress[] {
+  return progress
+    .filter(p => {
+      const mastery = p.masteryScore ?? null;
+      if (mastery !== null) return mastery >= 80 && mastery < 100;
+      return p.repetitions >= 2; // fallback heuristic when masteryScore isn't tracked
+    })
+    .sort((a, b) => {
+      // Prefer ones that are due (creates the "one more review will lock this in" feeling)
+      const aDue = isDueForReview(a) ? 1 : 0;
+      const bDue = isDueForReview(b) ? 1 : 0;
+      if (aDue !== bDue) return bDue - aDue;
+
+      const aMastery = a.masteryScore ?? 0;
+      const bMastery = b.masteryScore ?? 0;
+      if (aMastery !== bMastery) return bMastery - aMastery;
+
+      return (b.repetitions ?? 0) - (a.repetitions ?? 0);
+    })
+    .slice(0, limit);
+}
+
