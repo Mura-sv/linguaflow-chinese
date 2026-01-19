@@ -8,6 +8,16 @@ export interface CardProgress {
   repetitions: number; // Number of successful reviews
   nextReviewDate: Date;
   lastReviewDate: Date | null;
+  masteryScore?: number; // 0-100
+  nearMissCount?: number;
+  wasNearMiss?: boolean;
+}
+
+export interface LastSessionData {
+  date: string;
+  wordsReviewed: number;
+  correctCount: number;
+  nearMissWords: string[];
 }
 
 export interface ReviewQuality {
